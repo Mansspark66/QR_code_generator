@@ -1,67 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+/* ================= GLOBAL ================= */
 
 @layer base {
-  :root {
-    --background: 40 33% 96%;
-    --foreground: 220 25% 14%;
+  body {
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #1f2937;
 
-    --card: 40 30% 99%;
-    --card-foreground: 220 25% 14%;
-
-    --popover: 40 30% 99%;
-    --popover-foreground: 220 25% 14%;
-
-    --primary: 15 80% 55%;
-    --primary-foreground: 40 33% 98%;
-
-    --secondary: 40 20% 90%;
-    --secondary-foreground: 220 20% 30%;
-
-    --muted: 40 15% 92%;
-    --muted-foreground: 220 10% 46%;
-
-    --accent: 160 45% 40%;
-    --accent-foreground: 40 33% 98%;
-
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 40 33% 98%;
-
-    --border: 35 18% 86%;
-    --input: 35 18% 86%;
-    --ring: 15 80% 55%;
-
-    --radius: 1rem;
-
-    --sidebar-background: 40 25% 94%;
-    --sidebar-foreground: 220 25% 14%;
-    --sidebar-primary: 15 80% 55%;
-    --sidebar-primary-foreground: 40 33% 98%;
-    --sidebar-accent: 40 15% 90%;
-    --sidebar-accent-foreground: 220 20% 30%;
-    --sidebar-border: 35 18% 86%;
-    --sidebar-ring: 15 80% 55%;
-
-    --font-display: 'Instrument Serif', serif;
-    --font-body: 'DM Sans', sans-serif;
-
-    --color-warm: 30 60% 50%;
-    --color-sage: 160 30% 72%;
-    --color-blush: 10 60% 88%;
-    --color-clay: 20 35% 70%;
+    /* MAIN BACKGROUND */
+    background: linear-gradient(120deg, #e0f7ff, #ffffff);
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+/* ================= CREATIVE FLOATING BLOBS ================= */
 
-  body {
-    @apply bg-background text-foreground;
-    font-family: var(--font-body);
-  }
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.7;
+  z-index: -1;
+  animation: float 15s infinite ease-in-out;
+}
+
+/* Blue blob */
+body::before {
+  background: #7dd3fc;
+  top: -200px;
+  left: -200px;
+}
+
+/* Purple blob */
+body::after {
+  background: #c084fc;
+  bottom: -200px;
+  right: -200px;
+}
+
+/* Pink blob */
+body {
+  position: relative;
+}
+
+body::marker {
+  display: none;
+}
+
+/* Extra glow layer */
+body::selection {
+  background: transparent;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(80px) translateX(40px); }
+  100% { transform: translateY(0) translateX(0); }
 }
