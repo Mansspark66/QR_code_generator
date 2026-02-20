@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 33% 96%;
+    --foreground: 220 25% 14%;
+
+    --card: 40 30% 99%;
+    --card-foreground: 220 25% 14%;
+
+    --popover: 40 30% 99%;
+    --popover-foreground: 220 25% 14%;
+
+    --primary: 15 80% 55%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 40 20% 90%;
+    --secondary-foreground: 220 20% 30%;
+
+    --muted: 40 15% 92%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 160 45% 40%;
+    --accent-foreground: 40 33% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 33% 98%;
+
+    --border: 35 18% 86%;
+    --input: 35 18% 86%;
+    --ring: 15 80% 55%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 40 25% 94%;
+    --sidebar-foreground: 220 25% 14%;
+    --sidebar-primary: 15 80% 55%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 40 15% 90%;
+    --sidebar-accent-foreground: 220 20% 30%;
+    --sidebar-border: 35 18% 86%;
+    --sidebar-ring: 15 80% 55%;
+
+    --font-display: 'Instrument Serif', serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    --color-warm: 30 60% 50%;
+    --color-sage: 160 30% 72%;
+    --color-blush: 10 60% 88%;
+    --color-clay: 20 35% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+}
